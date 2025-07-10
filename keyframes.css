@@ -1,0 +1,11 @@
+@keyframes swipe_in {
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes zoomIn {
+    to {
+        transform: scale(1.30);
+    }
+}

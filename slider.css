@@ -1,0 +1,146 @@
+@import url('reset.css');
+@import url('fontface.css');
+@import url('keyframes.css');
+
+:root {
+    --transition-duration: 0.6s;
+    --zoom-duration: 20s;
+    --slide-duration: 3s;
+}
+
+html,
+body {
+    font-family: 'sf-pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: min(100vh, 1200px);
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.72);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.72) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: 100;
+}
+
+.images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity var(--transition-duration);
+    opacity: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.image.active {
+    z-index: 5;
+    opacity: 1;
+}
+
+.image.zoomIn img {
+    animation: zoomIn var(--zoom-duration) forwards;
+}
+
+.titles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    z-index: 4000;
+}
+
+.staticText {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
+}
+
+.dynamicTitles {
+    height: 190px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.dynamicTitles h2 {
+    font-size: 140px;
+    font-weight: 600;
+    line-height: 1.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform var(--transition-duration) cubic-bezier(0.25, 1, 0.5, 1),
+        opacity var(--transition-duration) cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dynamicTitles h2.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.dynamicTitles h2.swipe-up {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.textContainer {
+    overflow: hidden;
+}
+
+.textContainer h3 {
+    will-change: transform;
+    animation: swipe_in 1.2s forwards;
+    transform: translateY(120%);
+
+}
+
+.textContainer.delay h3 {
+    animation: swipe_in 1.2s 0.12s forwards;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    will-change: transform;
+    transform: scale(1.1) translateZ(0);
+}

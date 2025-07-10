@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'sf-pro';
+    src: url('fonts/sf-pro-text_regular.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sf-pro';
+    src: url('fonts/sf-pro-text_semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sf-pro';
+    src: url('fonts/sf-pro-text_bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sf-pro';
+    src: url('fonts/sf-pro-display_regular.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sf-pro';
+    src: url('fonts/sf-pro-display_semibold.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
