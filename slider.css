@@ -83,14 +83,14 @@ header::before {
 }
 
 .staticText {
-    font-size: 48px;
+    font-size: clamp(20px, 7vw, 48px);
     font-weight: 700;
     line-height: 1.2;
     color: white;
 }
 
 .dynamicTitles {
-    height: 190px;
+    height: clamp(58px, 16vw, 160px);
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -98,7 +98,7 @@ header::before {
 }
 
 .dynamicTitles h2 {
-    font-size: 140px;
+    font-size: clamp(50px, 14vw, 140px);
     font-weight: 600;
     line-height: 1.2;
     position: absolute;
