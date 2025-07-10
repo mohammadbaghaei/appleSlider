@@ -5,7 +5,7 @@
 :root {
     --transition-duration: 0.6s;
     --zoom-duration: 18s;
-    --slide-duration: 3s;
+    --slide-duration: 5s;
 }
 
 html,
